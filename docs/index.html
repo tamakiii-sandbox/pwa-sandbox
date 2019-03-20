@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA sandbox</title>
+    <link rel="manifest" href="./manifest.json">
+    <script>
+      if (navigator.serviceWorker instanceof Object) {
+        navigator.serviceWorker.register('./service-worker.js')
+          .then(console.log('Service Worker Registered'))
+          .catch(console.error.bind(console));
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>PWA sandbox</h1>
+    </header>
+  
+    <main class="main">
+      <button type="button" name="hello">Hello</button>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
